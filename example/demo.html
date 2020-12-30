@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>文書のタイトル</title>
+  <meta charset="utf-8">
+  <!-- A-Frame ライブラリの読み込み -->
+  <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+  <!-- AR.js ライブラリの読み込み -->
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+</head>
+<body style='margin:0px; overflow:hidden;'>
+  <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
+    <a-assets>
+      <img id="target1" src="/home/taisuke/Pictures/アイスランド２.jpg">
+    </a-assets>
+    　<!-- マーカーを指定 -->
+    <!-- 
+      <img id="target1" src="/home/taisuke/AR-Project/AR.js/logo.png">
+    <a-marker preset="hiro" type='pattern' url="my_marker.patt">
+      </a-image>
+      <a-image  src="/home/taisuke/AR-Project/AR.js/logo.png" position="0 0 0" rotation="-90 0 0">
+      <a-text value="Hello WebAR !" position="-0.5 0.5 0" rotation="-90 0 0" color="#0000ff"></a-text>
+    -->
+    <a-marker preset="hiro">
+    　　<!-- 画像を表示 -->
+      <a-plane id="theBox" 
+               position="0 0 0" 
+               rotation="-90 0 0" 
+               width="1" height="1"
+                material="target: #target1;transparent: true; opacity: 0.90;"></a-plane>
+
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+</html>
