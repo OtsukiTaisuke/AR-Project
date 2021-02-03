@@ -7,11 +7,13 @@
   <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
   <!-- AR.js ライブラリの読み込み -->
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  <img  src="https://github.com/OtsukiTaisuke/AR-Project/blob/main/example/doraemon.jpg">
+    <img id="target1" src="/home/taisuke/AR-Project/AR.js/logo.png">
 </head>
 <body style='margin:0px; overflow:hidden;'>
   <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
     <a-assets>
-      <img id="target1" src="/home/taisuke/Pictures/アイスランド２.jpg">
+      <img id="target1" src="https://github.com/OtsukiTaisuke/AR-Project/blob/main/example/doraemon.jpg">
     </a-assets>
     　<!-- マーカーを指定 -->
     <!-- 
@@ -23,12 +25,17 @@
     -->
     <a-marker preset="hiro">
     　　<!-- 画像を表示 -->
+      <!--
       <a-plane id="theBox" 
                position="0 0 0" 
                rotation="-90 0 0" 
                width="1" height="1"
                 material="target: #target1;transparent: true; opacity: 0.90;"></a-plane>
+      -->
 
+        <a-box position="0 0.5 0"
+               material="src: #target1;color: red; transparent: true; opacity: 0.50;">
+        </a-box>
     </a-marker>
     <a-entity camera></a-entity>
   </a-scene>
